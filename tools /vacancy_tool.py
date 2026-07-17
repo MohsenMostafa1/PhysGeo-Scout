@@ -149,6 +149,8 @@ class ProfileMatchScorerTool(BaseTool):
         "mlops": {"mlops", "kubernetes", "docker", "mlflow", "kubeflow", "kafka", "airflow", "fastapi", "tensorrt", "onnx", "kserve"},
         "research": {"research", "bayesian", "uncertainty quantification", "geometric deep learning", "physics-informed", "physical ai", "world model", "robotics"},
         "cloud": {"aws", "gcp", "vertex ai", "sagemaker", "prometheus", "grafana"},
+        "iot_drone": {"iot", "drone", "uav", "edge ai", "tinyml", "federated learning", "jetson", "raspberry pi", "ndvi", "satellite", "anomaly detection", "real-time"},
+        "data_infra": {"data pipeline", "spark", "hadoop", "gpu cluster", "distributed training", "vector database", "dagster", "data engineering", "streaming"},
     }
 
     def _run(self, jobs_json: str) -> List[Dict[str, Any]]:
