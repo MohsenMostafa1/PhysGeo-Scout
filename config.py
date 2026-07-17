@@ -117,6 +117,34 @@ INDUSTRIAL_QUERIES = {
         "multi-task fine-tuning",
         "fine-tuning on consumer GPUs",
     ],
+    "iot_edge": [
+        "IoT AI edge deployment 2025 2026",
+        "edge AI inference Jetson Raspberry Pi",
+        "federated learning IoT devices",
+        "tinyML edge optimization",
+        "real-time AI IoT pipeline Kafka Spark",
+        "AI anomaly detection IoT sensors",
+        "edge computing AI model compression",
+    ],
+    "drones": [
+        "drone AI computer vision 2025 2026",
+        "autonomous drone navigation deep learning",
+        "drone object detection YOLO real-time",
+        "UAV satellite imagery AI analysis",
+        "drone LiDAR point cloud processing",
+        "NDVI drone agriculture AI",
+        "swarm robotics drone AI coordination",
+    ],
+    "data_ai_infra": [
+        "data and AI infrastructure 2025 2026",
+        "GPU cluster orchestration Kubernetes AI",
+        "real-time data pipeline AI Kafka Flink",
+        "distributed AI training infrastructure",
+        "AI model serving production deployment",
+        "vector database RAG infrastructure",
+        "AI data pipeline Airflow Dagster orchestration",
+        "GPU memory optimization large model deployment",
+    ],
 }
 
 VACANCY_QUERIES = {
@@ -131,11 +159,16 @@ VACANCY_QUERIES = {
         "MLOps Engineer",
         "Senior AI Developer",
         "Research Scientist Physical AI",
+        "IoT AI Engineer",
+        "Drone AI Engineer",
+        "Data Infrastructure Engineer",
+        "AI Platform Engineer",
     ],
     "keywords": [
         "remote", "PyTorch", "computer vision", "LLM",
         "agentic AI", "MLOps", "research", "deep learning",
-        "robotics", "physical AI",
+        "robotics", "physical AI", "IoT", "drone", "UAV",
+        "edge AI", "data infrastructure", "GPU",
     ],
     "sources": [
         "Reddit r/MachineLearning jobs",
@@ -153,6 +186,8 @@ SUBREDDITS_TO_MONITOR = [
     "ComputerVision", "robotics", "MLOps", "LocalLLaMA",
     "LLMDevs", "AgenticAI", "LanguageTechnology", "PyTorch",
     "OpenAI", "nyu", "YannLeCun", "WorldModels", "ResearchPapers",
+    "IoT", "drones", "edgeai", "dataengineering", "gpucomputing",
+    "NVIDIA", "embeddedml", "TinyML",
 ]
 
 DISCORD_SERVERS = ["Hugging Face", "LAION", "EleutherAI", "MLOps Community"]
@@ -160,7 +195,8 @@ DISCORD_SERVERS = ["Hugging Face", "LAION", "EleutherAI", "MLOps Community"]
 HACKER_NEWS_TOPICS = [
     "LLM", "AI agent", "computer vision", "robotics",
     "fine-tuning", "MLOps", "NVIDIA", "Yann LeCun",
-    "world model", "agentic",
+    "world model", "agentic", "IoT AI", "drone AI",
+    "edge inference", "GPU cluster", "data pipeline AI",
 ]
 
 # ─── Schedule ──────────────────────────────────────────────────────────────────
