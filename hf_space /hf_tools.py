@@ -417,6 +417,8 @@ PROFILE_SKILLS = {
     "mlops": {"mlops", "kubernetes", "docker", "mlflow", "kubeflow", "kafka", "airflow", "fastapi", "tensorrt", "onnx", "kserve"},
     "research": {"geometric deep learning", "physics-informed", "world model", "robotics", "research", "uncertainty quantification", "bayesian", "physical ai"},
     "cloud": {"aws", "gcp", "vertex ai", "sagemaker", "prometheus", "grafana"},
+    "iot_drone": {"iot", "drone", "uav", "edge ai", "tinyml", "federated learning", "jetson", "raspberry pi", "ndvi", "satellite", "anomaly detection", "real-time"},
+    "data_infra": {"data pipeline", "spark", "hadoop", "kafka", "gpu cluster", "distributed training", "vector database", "dagster", "data engineering", "streaming"},
 }
 
 
