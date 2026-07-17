@@ -83,7 +83,7 @@ def _fmt_release(r):
 def run_full_report(progress=gr.Progress()):
     """Run all sources and produce a comprehensive report."""
     sections = []
-    total_steps = 9
+    total_steps = 12
     step = 0
 
     def _update(label):
@@ -97,49 +97,67 @@ def run_full_report(progress=gr.Progress()):
     sections.append("## 📚 arXiv: Physical AI & World Models\n" +
                     "\n---\n".join(_fmt_paper(p) for p in arxiv_papers if not p.get("error")))
 
-    # 2. arXiv — Robotics & CV
-    _update("Searching arXiv: Robotics & Computer Vision...")
-    arxiv_cv = search_arxiv("robotics foundation model 3D point cloud", max_results=5)
-    sections.append("## 🤖 arXiv: Robotics & Computer Vision\n" +
+    # 2. arXiv — Robotics, Drones & CV
+    _update("Searching arXiv: Robotics, Drones & Computer Vision...")
+    arxiv_cv = search_arxiv("drone AI computer vision robotics 3D point cloud", max_results=5)
+    sections.append("## 🤖 arXiv: Robotics, Drones & Computer Vision\n" +
                     "\n---\n".join(_fmt_paper(p) for p in arxiv_cv if not p.get("error")))
 
-    # 3. Semantic Scholar — Yann LeCun
+    # 3. arXiv — IoT & Edge AI
+    _update("Searching arXiv: IoT & Edge AI...")
+    arxiv_iot = search_arxiv("IoT edge AI inference TinyML federated learning", max_results=5)
+    sections.append("## 📡 arXiv: IoT & Edge AI\n" +
+                    "\n---\n".join(_fmt_paper(p) for p in arxiv_iot if not p.get("error")))
+
+    # 4. Semantic Scholar — Yann LeCun
     _update("Tracking Yann LeCun papers via Semantic Scholar...")
     lecitin = track_author_papers("Yann LeCun", max_results=5)
     sections.append("## 🧑‍🔬 Yann LeCun — Recent Papers\n" +
                     "\n---\n".join(_fmt_paper(p) for p in lecitin if not p.get("error")))
 
-    # 4. OpenAlex — NYU
+    # 5. OpenAlex — NYU
     _update("Fetching NYU papers via OpenAlex...")
     nyu = openalex_institution_papers("New York University", max_results=5)
     sections.append("## 🏛️ NYU — Recent AI Papers\n" +
                     "\n---\n".join(_fmt_paper(p) for p in nyu if not p.get("error")))
 
-    # 5. OpenAlex — Meta FAIR
+    # 6. OpenAlex — Meta FAIR
     _update("Fetching Meta FAIR papers via OpenAlex...")
     fair = openalex_institution_papers("Meta AI", max_results=5)
     sections.append("## 🔬 Meta FAIR — Recent Papers\n" +
                     "\n---\n".join(_fmt_paper(p) for p in fair if not p.get("error")))
 
-    # 6. GitHub Trending
-    _update("Checking GitHub trending AI repos...")
+    # 7. GitHub Trending — Agentic AI
+    _update("Checking GitHub trending: Agentic AI...")
     repos = github_trending("agentic-ai", max_results=5)
     sections.append("## ⭐ GitHub Trending: Agentic AI\n" +
                     "\n---\n".join(_fmt_repo(r) for r in repos if not r.get("error")))
 
-    # 7. Hacker News
-    _update("Searching Hacker News...")
+    # 8. GitHub Trending — IoT / Drone / Edge
+    _update("Checking GitHub trending: IoT & Drone AI...")
+    repos_iot = github_trending("IoT drone edge AI", max_results=5)
+    sections.append("## 🚁 GitHub Trending: IoT, Drone & Edge AI\n" +
+                    "\n---\n".join(_fmt_repo(r) for r in repos_iot if not r.get("error")))
+
+    # 9. Hacker News — AI Frameworks
+    _update("Searching Hacker News: AI frameworks...")
     hn = search_hackernews("agentic AI framework LLM", max_results=5)
-    sections.append("## 🔥 Hacker News: Trending AI\n" +
+    sections.append("## 🔥 Hacker News: AI Frameworks\n" +
                     "\n---\n".join(_fmt_hn(h) for h in hn if not h.get("error")))
 
-    # 8. GitHub Releases
+    # 10. Hacker News — IoT / Drones / Infra
+    _update("Searching Hacker News: IoT, Drones, Infrastructure...")
+    hn_iot = search_hackernews("IoT drone AI edge inference", max_results=5)
+    sections.append("## 🔥 Hacker News: IoT, Drones & AI Infrastructure\n" +
+                    "\n---\n".join(_fmt_hn(h) for h in hn_iot if not h.get("error")))
+
+    # 11. GitHub Releases
     _update("Fetching latest AI framework releases...")
     releases = github_releases("huggingface/transformers,pytorch/pytorch,vllm-project/vllm", max_per_repo=1)
     sections.append("## 🚀 Latest AI Framework Releases\n" +
                     "\n---\n".join(_fmt_release(r) for r in releases if not r.get("error")))
 
-    # 9. HN Who is Hiring
+    # 12. HN Who is Hiring
     _update("Scanning HN Who is Hiring for AI jobs...")
     hiring = hn_who_is_hiring(max_results=10)
 
